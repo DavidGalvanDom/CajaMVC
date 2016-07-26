@@ -1,0 +1,37 @@
+﻿@model  List<Caj.Ejemplo.Web.Model.Cliente>
+
+    @{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Hola Cliente !!!</h2>
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Nombre</td>
+            <td>Tipo</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.idCliente</td>
+                <td>@item.Nombre</td>
+                <td>@item.Tipo</td>
+                <td><button class="btn btn-default" onclick="JavaScript: Cliente.CargaCliente('@item.idCliente');"> Detalle</button></td>
+            </tr>
+
+        }
+
+        </table>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="nuevoAlmacenLabel" id="actualiza-Cliente">
+
+
+</div>
+
+     @section Scripts {
+            <script src="~/Scripts/Cliente.js"></script>
+        }
